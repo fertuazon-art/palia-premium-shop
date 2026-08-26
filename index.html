@@ -3,192 +3,372 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#718b70">
+
 <title>Jessica's Palia Premium Shop ♡</title>
 
 <style>
-body{
-  margin:0;
-  background:#f8f2e7;
-  color:#3f4037;
-  font-family:Georgia,serif;
+* {
+  box-sizing: border-box;
 }
 
-header{
-  text-align:center;
-  padding:55px 20px;
-  background:linear-gradient(#dfe9d8,#f8f2e7);
+html {
+  scroll-behavior: smooth;
 }
 
-h1{
-  color:#506b50;
-  font-size:45px;
-  font-weight:normal;
-  margin:15px 0;
+body {
+  margin: 0;
+  background:
+    radial-gradient(circle at 10% 5%, #dfe9d8 0, transparent 30%),
+    radial-gradient(circle at 90% 15%, #f6e1c8 0, transparent 28%),
+    #f8f2e7;
+  color: #3f4037;
+  font-family: Georgia, "Times New Roman", serif;
 }
 
-.subtitle{
-  color:#777467;
-  font-style:italic;
+header {
+  text-align: center;
+  padding: 55px 20px 45px;
+  background:
+    linear-gradient(
+      rgba(223,233,216,.9),
+      rgba(248,242,231,.95)
+    );
+  border-bottom: 1px solid rgba(80,107,80,.12);
 }
 
-.container{
-  max-width:1000px;
-  margin:auto;
-  padding:25px 15px 60px;
+.label {
+  display: inline-block;
+  padding: 8px 15px;
+  border-radius: 50px;
+  background: rgba(255,255,255,.8);
+  color: #506b50;
+  font: bold 11px Arial, sans-serif;
+  letter-spacing: 1.6px;
+  text-transform: uppercase;
 }
 
-.intro{
-  background:#fffaf1;
-  padding:25px;
-  border-radius:22px;
-  margin-bottom:30px;
-  box-shadow:0 8px 25px rgba(0,0,0,.08);
+h1 {
+  color: #506b50;
+  font-size: clamp(38px, 9vw, 64px);
+  font-weight: normal;
+  margin: 17px 0 8px;
 }
 
-h2{
-  color:#506b50;
+.subtitle {
+  max-width: 650px;
+  margin: auto;
+  color: #777467;
+  font-size: 17px;
+  line-height: 1.6;
+  font-style: italic;
 }
 
-.controls{
-  display:flex;
-  gap:10px;
-  flex-wrap:wrap;
-  margin-bottom:25px;
+.heart-text {
+  color: #d88991;
 }
 
-input,select{
-  padding:13px;
-  border:1px solid #d9cfbd;
-  border-radius:12px;
-  background:#fffaf1;
+.container {
+  width: min(1100px, calc(100% - 24px));
+  margin: auto;
+  padding: 28px 0 60px;
 }
 
-input{
-  flex:1;
-  min-width:200px;
+.intro {
+  background: rgba(255,250,241,.95);
+  border: 1px solid #e7ddcb;
+  border-radius: 24px;
+  padding: 25px;
+  margin-bottom: 28px;
+  box-shadow: 0 10px 30px rgba(67,59,43,.12);
 }
 
-.grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-  gap:20px;
+.intro h2 {
+  margin: 0 0 8px;
+  color: #506b50;
 }
 
-.card{
-  position:relative;
-  overflow:hidden;
-  background:#fffaf1;
-  border-radius:20px;
-  box-shadow:0 8px 25px rgba(0,0,0,.1);
+.intro p {
+  margin: 0;
+  color: #777467;
+  line-height: 1.7;
 }
 
-.image{
-  height:250px;
-  background:#dfe9d8;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  overflow:hidden;
+.stats {
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 14px;
+  margin-bottom: 25px;
 }
 
-.image img{
-  width:100%;
-  height:100%;
-  object-fit:cover;
+.stat {
+  background: #fffaf1;
+  border: 1px solid #e7ddcb;
+  border-radius: 18px;
+  padding: 18px;
+  text-align: center;
+  box-shadow: 0 8px 25px rgba(67,59,43,.08);
 }
 
-.placeholder{
-  font-size:70px;
+.stat-number {
+  display: block;
+  color: #506b50;
+  font: bold 25px Arial, sans-serif;
 }
 
-.info{
-  padding:18px;
+.stat-label {
+  display: block;
+  margin-top: 5px;
+  color: #777467;
+  font: 11px Arial, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
-.category{
-  color:#718b70;
-  font:bold 11px Arial,sans-serif;
-  text-transform:uppercase;
-  letter-spacing:1px;
+.controls {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin: 25px 0 30px;
 }
 
-.name{
-  font-size:22px;
-  margin:7px 0 12px;
+input,
+select {
+  padding: 13px 15px;
+  border: 1px solid #d9cfbd;
+  border-radius: 13px;
+  background: #fffaf1;
+  color: #3f4037;
+  font: inherit;
+  outline: none;
 }
 
-.price{
-  font:bold 17px Arial,sans-serif;
+input {
+  flex: 1;
+  min-width: 220px;
 }
 
-.old{
-  color:#aaa;
-  text-decoration:line-through;
-  font-size:13px;
-  margin-right:7px;
+input:focus,
+select:focus {
+  border-color: #718b70;
 }
 
-.discount{
-  display:inline-block;
-  margin-top:10px;
-  padding:6px 10px;
-  background:#dfe9d8;
-  color:#506b50;
-  border-radius:20px;
-  font:bold 11px Arial,sans-serif;
+.section-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 30px 0 15px;
 }
 
-.heart{
-  position:absolute;
-  top:12px;
-  right:12px;
-  width:42px;
-  height:42px;
-  border:0;
-  border-radius:50%;
-  background:white;
-  color:#d88991;
-  font-size:23px;
+.section-heading h2 {
+  margin: 0;
+  color: #506b50;
 }
 
-.wishlist{
-  margin-top:40px;
-  padding:25px;
-  background:#eee7d8;
-  border-radius:22px;
+.section-heading span {
+  color: #777467;
+  font: 12px Arial, sans-serif;
 }
 
-.note{
-  margin-top:40px;
-  padding:30px;
-  text-align:center;
-  background:#fffaf1;
-  border-radius:22px;
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(245px,1fr));
+  gap: 20px;
 }
 
-footer{
-  text-align:center;
-  padding:30px;
-  color:#777467;
-  font:12px Arial,sans-serif;
+.card {
+  position: relative;
+  overflow: hidden;
+  background: #fffaf1;
+  border: 1px solid #e6dccb;
+  border-radius: 20px;
+  box-shadow: 0 8px 25px rgba(67,59,43,.1);
+  transition: transform .2s ease, box-shadow .2s ease;
 }
 
-@media(max-width:600px){
-  h1{
-    font-size:36px;
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 32px rgba(67,59,43,.16);
+}
+
+.image {
+  height: 280px;
+  background:
+    linear-gradient(135deg,#dce8d7,#f3e5cf);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.info {
+  padding: 18px;
+}
+
+.category {
+  color: #718b70;
+  font: bold 10px Arial, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+}
+
+.name {
+  font-size: 21px;
+  line-height: 1.25;
+  margin: 7px 0 12px;
+}
+
+.price {
+  font: bold 17px Arial, sans-serif;
+}
+
+.old {
+  color: #aaa;
+  text-decoration: line-through;
+  font-size: 13px;
+  font-weight: normal;
+  margin-right: 7px;
+}
+
+.discount {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 6px 10px;
+  background: #dfe9d8;
+  color: #506b50;
+  border-radius: 20px;
+  font: bold 11px Arial, sans-serif;
+}
+
+.heart-button {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 42px;
+  height: 42px;
+  border: none;
+  border-radius: 50%;
+  background: rgba(255,250,241,.95);
+  color: #d88991;
+  font-size: 23px;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0,0,0,.08);
+  z-index: 2;
+}
+
+.heart-button.saved {
+  background: #fff0f0;
+}
+
+.wishlist-section {
+  margin-top: 42px;
+  padding: 25px;
+  background: #eee7d8;
+  border-radius: 24px;
+}
+
+.wishlist-section h2 {
+  margin-top: 0;
+  color: #506b50;
+}
+
+.wishlist-description {
+  color: #777467;
+  line-height: 1.6;
+}
+
+.empty {
+  grid-column: 1 / -1;
+  padding: 40px 20px;
+  text-align: center;
+  color: #777467;
+  background: rgba(255,250,241,.65);
+  border-radius: 18px;
+}
+
+.love-note {
+  margin-top: 40px;
+  padding: 30px 25px;
+  text-align: center;
+  background:
+    linear-gradient(135deg,#fff8ee,#f4e9d9);
+  border: 1px solid #eadbc5;
+  border-radius: 25px;
+  box-shadow: 0 10px 30px rgba(67,59,43,.1);
+}
+
+.love-note .symbol {
+  font-size: 30px;
+}
+
+.love-note h2 {
+  color: #506b50;
+  font-size: 27px;
+  font-weight: normal;
+}
+
+.love-note p {
+  max-width: 650px;
+  margin: auto;
+  color: #777467;
+  line-height: 1.7;
+}
+
+footer {
+  padding: 25px 20px 40px;
+  text-align: center;
+  color: #898272;
+  font: 11px Arial, sans-serif;
+  line-height: 1.7;
+}
+
+@media(max-width:650px) {
+
+  header {
+    padding: 42px 18px 35px;
+  }
+
+  .stats {
+    grid-template-columns: 1fr;
+  }
+
+  .container {
+    width: calc(100% - 18px);
+  }
+
+  .section-heading {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .image {
+    height: 270px;
   }
 }
 </style>
 </head>
 
+
 <body>
+
 
 <header>
 
-  <div>PALIA PREMIUM SHOP</div>
+  <span class="label">
+    Palia Premium Shop
+  </span>
 
   <h1>
-    Jessica's Edition ♡
+    Jessica's Edition
+    <span class="heart-text">♡</span>
   </h1>
 
   <p class="subtitle">
@@ -200,15 +380,68 @@ footer{
 
 <main class="container">
 
+
 <section class="intro">
 
-  <h2>🌿 August 2026 Shop</h2>
+  <h2>🌿 August 2026 Shop Tracker</h2>
 
   <p>
     Welcome to your little corner of Palia.
-    Here are the Premium Shop items and discounts
-    we're keeping track of.
+    Keep track of the Premium Shop items and
+    discounts all in one place.
   </p>
+
+</section>
+
+
+<section class="stats">
+
+  <div class="stat">
+
+    <span
+      class="stat-number"
+      id="itemCount"
+    >
+      0
+    </span>
+
+    <span class="stat-label">
+      Sale Items
+    </span>
+
+  </div>
+
+
+  <div class="stat">
+
+    <span
+      class="stat-number"
+      id="bestDiscount"
+    >
+      0%
+    </span>
+
+    <span class="stat-label">
+      Best Discount
+    </span>
+
+  </div>
+
+
+  <div class="stat">
+
+    <span
+      class="stat-number"
+      id="wishlistCount"
+    >
+      0
+    </span>
+
+    <span class="stat-label">
+      Wishlist
+    </span>
+
+  </div>
 
 </section>
 
@@ -217,54 +450,117 @@ footer{
 
   <input
     id="search"
-    placeholder="Search items..."
+    type="search"
+    placeholder="Search outfits, gliders, tools..."
   >
+
 
   <select id="category">
 
-    <option value="all">All Categories</option>
-    <option value="Outfit">Outfits</option>
-    <option value="Glider">Gliders</option>
-    <option value="Tool">Tool Skins</option>
-    <option value="Emote">Emotes</option>
-    <option value="Landscape">Landscapes</option>
+    <option value="all">
+      All Categories
+    </option>
+
+    <option value="Outfit">
+      Outfits
+    </option>
+
+    <option value="Glider">
+      Gliders
+    </option>
+
+    <option value="Tool">
+      Tool Skins
+    </option>
+
+    <option value="Emote">
+      Emotes
+    </option>
+
+    <option value="Landscape">
+      Landscapes
+    </option>
+
+  </select>
+
+
+  <select id="sort">
+
+    <option value="discount">
+      Biggest Discount
+    </option>
+
+    <option value="price">
+      Lowest Price
+    </option>
+
+    <option value="name">
+      Name
+    </option>
 
   </select>
 
 </div>
 
 
-<h2>🔥 Current Sale</h2>
+<div class="section-heading">
 
-<section id="shop" class="grid"></section>
+  <h2>
+    🔥 Current Sale
+  </h2>
+
+  <span>
+    August 2026
+  </span>
+
+</div>
 
 
-<section class="wishlist">
+<section
+  id="shop"
+  class="grid"
+></section>
 
-  <h2>♡ Jessica's Wishlist</h2>
 
-  <p>
+<section class="wishlist-section">
+
+  <h2>
+    ♡ Jessica's Wishlist
+  </h2>
+
+  <p class="wishlist-description">
     Tap the heart on anything you like.
+    Your wishlist is saved on this device.
   </p>
 
-  <section id="saved" class="grid"></section>
+  <section
+    id="wishlist"
+    class="grid"
+  ></section>
 
 </section>
 
 
-<section class="note">
+<section class="love-note">
 
-  <h2>🫶🏼 Made for you</h2>
+  <div class="symbol">
+    🫶🏼
+  </div>
+
+  <h2>
+    Made for you
+  </h2>
 
   <p>
-    I made this little shop for you so you don't have
-    to keep searching everywhere whenever something
-    you like goes on sale.
+    I made this little shop tracker so you don't
+    have to keep searching everywhere whenever
+    something you like goes on sale.
     I hope you find something pretty for your
     Palia adventures.
   </p>
 
 </section>
+
 
 </main>
 
@@ -273,112 +569,134 @@ footer{
 
   Fan-made Palia companion website.
 
-  <br><br>
+  <br>
 
   Palia is developed and published by Singularity 6.
-  This website is not affiliated with or endorsed by
-  Singularity 6.
+  This website is not affiliated with or endorsed
+  by Singularity 6.
+
+  <br><br>
+
+  Prices and sale information should always be
+  checked against the current in-game Premium Shop
+  before purchasing.
 
 </footer>
 
 
 <script>
 
+
 const items = [
 
   {
-    name:"Highland Champion",
-    category:"Outfit",
-    discount:20,
-    price:2040,
-    old:2550,
-    icon:"🏔️"
+    id: 1,
+    name: "Plush Park Landscape",
+    category: "Landscape",
+    discount: 40,
+    price: 1020,
+    old: 1700,
+    image: "IMG_1147.webp"
   },
 
-  {
-    name:"Lilypad Umbrella",
-    category:"Glider",
-    discount:20,
-    price:680,
-    old:850,
-    icon:"🌿"
-  },
 
   {
-    name:"Floral Fantasy Toolset",
-    category:"Tool",
-    discount:15,
-    price:1084,
-    old:1275,
-    icon:"🌸"
+    id: 2,
+    name: "Umbrella Twirl",
+    category: "Emote",
+    discount: 40,
+    price: 510,
+    old: 850,
+    image: "IMG_1139.jpeg"
   },
 
-  {
-    name:"Floral Fantasy Outfit",
-    category:"Outfit",
-    discount:15,
-    price:2168,
-    old:2550,
-    icon:"🌷"
-  },
 
   {
-    name:"Snowy Socialite",
-    category:"Outfit",
-    discount:30,
-    price:1785,
-    old:2550,
-    icon:"❄️"
+    id: 3,
+    name: "Snowy Socialite",
+    category: "Outfit",
+    discount: 30,
+    price: 1785,
+    old: 2550,
+    image: "IMG_1140.jpeg"
   },
 
-  {
-    name:"Plush Park Landscape",
-    category:"Landscape",
-    discount:40,
-    price:1020,
-    old:1700,
-    icon:"🌳"
-  },
 
   {
-    name:"Umbrella Twirl",
-    category:"Emote",
-    discount:40,
-    price:510,
-    old:850,
-    icon:"☂️"
+    id: 4,
+    name: "Highland Champion",
+    category: "Outfit",
+    discount: 20,
+    price: 2040,
+    old: 2550,
+    image: "IMG_1141.webp"
   },
 
+
   {
-    name:"Wedding Party Glider",
-    category:"Glider",
-    discount:50,
-    price:425,
-    old:850,
-    image:"IMG_1135.png"
+    id: 5,
+    name: "Lilypad Umbrella",
+    category: "Glider",
+    discount: 20,
+    price: 680,
+    old: 850,
+    image: "IMG_1142.png"
+  },
+
+
+  {
+    id: 6,
+    name: "Floral Fantasy Toolset",
+    category: "Tool",
+    discount: 15,
+    price: 1084,
+    old: 1275,
+    image: "IMG_1143.png"
+  },
+
+
+  {
+    id: 7,
+    name: "Floral Fantasy Outfit",
+    category: "Outfit",
+    discount: 15,
+    price: 2168,
+    old: 2550,
+    image: "IMG_1144.jpeg"
+  },
+
+
+  {
+    id: 8,
+    name: "Wedding Party Glider",
+    category: "Glider",
+    discount: 50,
+    price: 425,
+    old: 850,
+    image: "IMG_1135.png"
   }
 
 ];
 
 
-let wishlist=[];
+let wishlist =
+  JSON.parse(
+    localStorage.getItem(
+      "jessicaPaliaWishlist"
+    )
+  ) || [];
 
 
-function card(item,index){
+function createCard(item) {
 
-  let picture;
+  const index =
+    items.findIndex(
+      x => x.id === item.id
+    );
 
-  if(item.image){
 
-    picture=
-      `<img src="${item.image}" alt="${item.name}">`;
-
-  }else{
-
-    picture=
-      `<div class="placeholder">${item.icon}</div>`;
-
-  }
+  const saved =
+    wishlist.includes(item.id);
 
 
   return `
@@ -387,16 +705,25 @@ function card(item,index){
 
       <div class="image">
 
-        ${picture}
+        <img
+          src="${item.image}"
+          alt="${item.name}"
+          loading="lazy"
+        >
 
       </div>
 
+
       <button
-        class="heart"
-        onclick="save(${index})"
+        class="heart-button ${saved ? "saved" : ""}"
+        onclick="toggleWishlist(${item.id})"
+        aria-label="Add ${item.name} to wishlist"
       >
-        ♡
+
+        ${saved ? "♥" : "♡"}
+
       </button>
+
 
       <div class="info">
 
@@ -411,10 +738,10 @@ function card(item,index){
         <div class="price">
 
           <span class="old">
-            ${item.old} PC
+            ${item.old.toLocaleString()} PC
           </span>
 
-          ${item.price} PC
+          ${item.price.toLocaleString()} PC
 
         </div>
 
@@ -431,92 +758,236 @@ function card(item,index){
 }
 
 
-function render(){
+function renderShop() {
 
-  const search=
-    document.getElementById("search")
-    .value
-    .toLowerCase();
-
-  const category=
-    document.getElementById("category")
-    .value;
+  const query =
+    document
+      .getElementById("search")
+      .value
+      .toLowerCase()
+      .trim();
 
 
-  const filtered=
-    items.filter(item=>{
+  const selectedCategory =
+    document
+      .getElementById("category")
+      .value;
 
-      const searchMatch=
-        item.name.toLowerCase()
-        .includes(search);
 
-      const categoryMatch=
-        category==="all" ||
-        item.category===category;
+  const selectedSort =
+    document
+      .getElementById("sort")
+      .value;
 
-      return searchMatch &&
-             categoryMatch;
+
+  let filtered =
+    items.filter(item => {
+
+      const matchesSearch =
+        !query ||
+        item.name
+          .toLowerCase()
+          .includes(query);
+
+
+      const matchesCategory =
+        selectedCategory === "all" ||
+        item.category === selectedCategory;
+
+
+      return (
+        matchesSearch &&
+        matchesCategory
+      );
 
     });
 
 
-  document.getElementById("shop")
-    .innerHTML=
-    filtered
-      .map(item=>card(item,items.indexOf(item)))
-      .join("");
+  if (selectedSort === "discount") {
+
+    filtered.sort(
+      (a,b) =>
+        b.discount - a.discount
+    );
+
+  }
 
 
-  document.getElementById("saved")
-    .innerHTML=
-    wishlist
-      .map(index=>card(items[index],index))
-      .join("");
+  if (selectedSort === "price") {
+
+    filtered.sort(
+      (a,b) =>
+        a.price - b.price
+    );
+
+  }
 
 
-  if(wishlist.length===0){
+  if (selectedSort === "name") {
 
-    document.getElementById("saved")
-      .innerHTML=
-      `<div>
-        Your wishlist is empty.
-        Tap ♡ on something you love.
-      </div>`;
+    filtered.sort(
+      (a,b) =>
+        a.name.localeCompare(b.name)
+    );
+
+  }
+
+
+  const shop =
+    document.getElementById("shop");
+
+
+  if (filtered.length === 0) {
+
+    shop.innerHTML = `
+
+      <div class="empty">
+
+        No items found.
+        <br><br>
+        Try another search or category.
+
+      </div>
+
+    `;
+
+  } else {
+
+    shop.innerHTML =
+      filtered
+        .map(createCard)
+        .join("");
 
   }
 
 }
 
 
-function save(index){
+function renderWishlist() {
 
-  if(wishlist.includes(index)){
+  const wishlistGrid =
+    document.getElementById("wishlist");
 
-    wishlist=
-      wishlist.filter(x=>x!==index);
 
-  }else{
+  const savedItems =
+    items.filter(item =>
+      wishlist.includes(item.id)
+    );
 
-    wishlist.push(index);
+
+  if (savedItems.length === 0) {
+
+    wishlistGrid.innerHTML = `
+
+      <div class="empty">
+
+        Your wishlist is empty.
+
+        <br><br>
+
+        Tap ♡ on something you love.
+
+      </div>
+
+    `;
+
+  } else {
+
+    wishlistGrid.innerHTML =
+      savedItems
+        .map(createCard)
+        .join("");
 
   }
 
-  render();
+
+  document
+    .getElementById("wishlistCount")
+    .textContent =
+      savedItems.length;
+
+}
+
+
+function toggleWishlist(id) {
+
+  if (wishlist.includes(id)) {
+
+    wishlist =
+      wishlist.filter(
+        itemId => itemId !== id
+      );
+
+  } else {
+
+    wishlist.push(id);
+
+  }
+
+
+  localStorage.setItem(
+    "jessicaPaliaWishlist",
+    JSON.stringify(wishlist)
+  );
+
+
+  renderShop();
+  renderWishlist();
+
+}
+
+
+function updateStats() {
+
+  document
+    .getElementById("itemCount")
+    .textContent =
+      items.length;
+
+
+  const best =
+    Math.max(
+      ...items.map(
+        item => item.discount
+      )
+    );
+
+
+  document
+    .getElementById("bestDiscount")
+    .textContent =
+      best + "%";
 
 }
 
 
 document
   .getElementById("search")
-  .addEventListener("input",render);
+  .addEventListener(
+    "input",
+    renderShop
+  );
 
 
 document
   .getElementById("category")
-  .addEventListener("change",render);
+  .addEventListener(
+    "change",
+    renderShop
+  );
 
 
-render();
+document
+  .getElementById("sort")
+  .addEventListener(
+    "change",
+    renderShop
+  );
+
+
+updateStats();
+renderShop();
+renderWishlist();
 
 </script>
 
