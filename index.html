@@ -5,22 +5,18 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#718b70">
 
-<title>Jessica's Palia Premium Shop ♡</title>
+<title>Jessica's Palia Premium Shop</title>
 
 <style>
 * {
   box-sizing: border-box;
 }
 
-html {
-  scroll-behavior: smooth;
-}
-
 body {
   margin: 0;
   background:
-    radial-gradient(circle at 10% 5%, #dfe9d8 0, transparent 30%),
-    radial-gradient(circle at 90% 15%, #f6e1c8 0, transparent 28%),
+    radial-gradient(circle at 10% 5%, #dfe9d8, transparent 30%),
+    radial-gradient(circle at 90% 15%, #f6e1c8, transparent 28%),
     #f8f2e7;
   color: #3f4037;
   font-family: Georgia, "Times New Roman", serif;
@@ -29,43 +25,31 @@ body {
 header {
   text-align: center;
   padding: 55px 20px 45px;
-  background:
-    linear-gradient(
-      rgba(223,233,216,.9),
-      rgba(248,242,231,.95)
-    );
-  border-bottom: 1px solid rgba(80,107,80,.12);
+  background: linear-gradient(#dfe9d8, #f8f2e7);
 }
 
 .label {
   display: inline-block;
   padding: 8px 15px;
   border-radius: 50px;
-  background: rgba(255,255,255,.8);
+  background: white;
   color: #506b50;
   font: bold 11px Arial, sans-serif;
-  letter-spacing: 1.6px;
+  letter-spacing: 1.5px;
   text-transform: uppercase;
 }
 
 h1 {
-  color: #506b50;
-  font-size: clamp(38px, 9vw, 64px);
-  font-weight: normal;
   margin: 17px 0 8px;
+  color: #506b50;
+  font-size: clamp(38px, 9vw, 62px);
+  font-weight: normal;
 }
 
 .subtitle {
-  max-width: 650px;
-  margin: auto;
   color: #777467;
   font-size: 17px;
-  line-height: 1.6;
   font-style: italic;
-}
-
-.heart-text {
-  color: #d88991;
 }
 
 .container {
@@ -75,7 +59,7 @@ h1 {
 }
 
 .intro {
-  background: rgba(255,250,241,.95);
+  background: #fffaf1;
   border: 1px solid #e7ddcb;
   border-radius: 24px;
   padding: 25px;
@@ -84,45 +68,13 @@ h1 {
 }
 
 .intro h2 {
-  margin: 0 0 8px;
+  margin-top: 0;
   color: #506b50;
 }
 
 .intro p {
-  margin: 0;
   color: #777467;
   line-height: 1.7;
-}
-
-.stats {
-  display: grid;
-  grid-template-columns: repeat(3,1fr);
-  gap: 14px;
-  margin-bottom: 25px;
-}
-
-.stat {
-  background: #fffaf1;
-  border: 1px solid #e7ddcb;
-  border-radius: 18px;
-  padding: 18px;
-  text-align: center;
-  box-shadow: 0 8px 25px rgba(67,59,43,.08);
-}
-
-.stat-number {
-  display: block;
-  color: #506b50;
-  font: bold 25px Arial, sans-serif;
-}
-
-.stat-label {
-  display: block;
-  margin-top: 5px;
-  color: #777467;
-  font: 11px Arial, sans-serif;
-  text-transform: uppercase;
-  letter-spacing: 1px;
 }
 
 .controls {
@@ -140,7 +92,6 @@ select {
   background: #fffaf1;
   color: #3f4037;
   font: inherit;
-  outline: none;
 }
 
 input {
@@ -148,31 +99,25 @@ input {
   min-width: 220px;
 }
 
-input:focus,
-select:focus {
-  border-color: #718b70;
-}
-
-.section-heading {
+.section-title {
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin: 30px 0 15px;
 }
 
-.section-heading h2 {
-  margin: 0;
+.section-title h2 {
   color: #506b50;
 }
 
-.section-heading span {
+.section-title span {
   color: #777467;
   font: 12px Arial, sans-serif;
 }
 
 .grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit,minmax(245px,1fr));
+  grid-template-columns: repeat(auto-fit, minmax(245px, 1fr));
   gap: 20px;
 }
 
@@ -183,29 +128,30 @@ select:focus {
   border: 1px solid #e6dccb;
   border-radius: 20px;
   box-shadow: 0 8px 25px rgba(67,59,43,.1);
-  transition: transform .2s ease, box-shadow .2s ease;
 }
 
-.card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 14px 32px rgba(67,59,43,.16);
-}
-
-.image {
+.item-image {
+  width: 100%;
   height: 280px;
-  background:
-    linear-gradient(135deg,#dce8d7,#f3e5cf);
+  background: linear-gradient(135deg,#dce8d7,#f3e5cf);
   display: flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;
 }
 
-.image img {
+.item-image img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   display: block;
+}
+
+.image-error {
+  padding: 20px;
+  text-align: center;
+  color: #777467;
+  font: 13px Arial, sans-serif;
 }
 
 .info {
@@ -220,20 +166,19 @@ select:focus {
 }
 
 .name {
-  font-size: 21px;
-  line-height: 1.25;
   margin: 7px 0 12px;
+  font-size: 21px;
 }
 
 .price {
   font: bold 17px Arial, sans-serif;
 }
 
-.old {
+.old-price {
   color: #aaa;
-  text-decoration: line-through;
   font-size: 13px;
   font-weight: normal;
+  text-decoration: line-through;
   margin-right: 7px;
 }
 
@@ -241,47 +186,36 @@ select:focus {
   display: inline-block;
   margin-top: 10px;
   padding: 6px 10px;
+  border-radius: 20px;
   background: #dfe9d8;
   color: #506b50;
-  border-radius: 20px;
   font: bold 11px Arial, sans-serif;
 }
 
-.heart-button {
+.heart {
   position: absolute;
   top: 12px;
   right: 12px;
+  z-index: 5;
   width: 42px;
   height: 42px;
-  border: none;
+  border: 0;
   border-radius: 50%;
   background: rgba(255,250,241,.95);
   color: #d88991;
   font-size: 23px;
   cursor: pointer;
-  box-shadow: 0 4px 12px rgba(0,0,0,.08);
-  z-index: 2;
 }
 
-.heart-button.saved {
-  background: #fff0f0;
-}
-
-.wishlist-section {
+.wishlist {
   margin-top: 42px;
   padding: 25px;
   background: #eee7d8;
   border-radius: 24px;
 }
 
-.wishlist-section h2 {
-  margin-top: 0;
+.wishlist h2 {
   color: #506b50;
-}
-
-.wishlist-description {
-  color: #777467;
-  line-height: 1.6;
 }
 
 .empty {
@@ -289,32 +223,23 @@ select:focus {
   padding: 40px 20px;
   text-align: center;
   color: #777467;
-  background: rgba(255,250,241,.65);
-  border-radius: 18px;
 }
 
-.love-note {
+.note {
   margin-top: 40px;
   padding: 30px 25px;
   text-align: center;
-  background:
-    linear-gradient(135deg,#fff8ee,#f4e9d9);
-  border: 1px solid #eadbc5;
+  background: #fffaf1;
   border-radius: 25px;
   box-shadow: 0 10px 30px rgba(67,59,43,.1);
 }
 
-.love-note .symbol {
-  font-size: 30px;
-}
-
-.love-note h2 {
+.note h2 {
   color: #506b50;
-  font-size: 27px;
   font-weight: normal;
 }
 
-.love-note p {
+.note p {
   max-width: 650px;
   margin: auto;
   color: #777467;
@@ -322,7 +247,7 @@ select:focus {
 }
 
 footer {
-  padding: 25px 20px 40px;
+  padding: 30px 20px 40px;
   text-align: center;
   color: #898272;
   font: 11px Arial, sans-serif;
@@ -335,21 +260,16 @@ footer {
     padding: 42px 18px 35px;
   }
 
-  .stats {
-    grid-template-columns: 1fr;
-  }
-
   .container {
     width: calc(100% - 18px);
   }
 
-  .section-heading {
+  .section-title {
     align-items: flex-start;
     flex-direction: column;
-    gap: 5px;
   }
 
-  .image {
+  .item-image {
     height: 270px;
   }
 }
@@ -367,8 +287,7 @@ footer {
   </span>
 
   <h1>
-    Jessica's Edition
-    <span class="heart-text">♡</span>
+    Jessica's Edition ♡
   </h1>
 
   <p class="subtitle">
@@ -383,65 +302,15 @@ footer {
 
 <section class="intro">
 
-  <h2>🌿 August 2026 Shop Tracker</h2>
+  <h2>
+    🌿 August 2026 Shop Tracker
+  </h2>
 
   <p>
     Welcome to your little corner of Palia.
-    Keep track of the Premium Shop items and
-    discounts all in one place.
+    Keep track of Premium Shop items and discounts
+    all in one place.
   </p>
-
-</section>
-
-
-<section class="stats">
-
-  <div class="stat">
-
-    <span
-      class="stat-number"
-      id="itemCount"
-    >
-      0
-    </span>
-
-    <span class="stat-label">
-      Sale Items
-    </span>
-
-  </div>
-
-
-  <div class="stat">
-
-    <span
-      class="stat-number"
-      id="bestDiscount"
-    >
-      0%
-    </span>
-
-    <span class="stat-label">
-      Best Discount
-    </span>
-
-  </div>
-
-
-  <div class="stat">
-
-    <span
-      class="stat-number"
-      id="wishlistCount"
-    >
-      0
-    </span>
-
-    <span class="stat-label">
-      Wishlist
-    </span>
-
-  </div>
 
 </section>
 
@@ -454,56 +323,29 @@ footer {
     placeholder="Search outfits, gliders, tools..."
   >
 
-
   <select id="category">
 
-    <option value="all">
-      All Categories
-    </option>
-
-    <option value="Outfit">
-      Outfits
-    </option>
-
-    <option value="Glider">
-      Gliders
-    </option>
-
-    <option value="Tool">
-      Tool Skins
-    </option>
-
-    <option value="Emote">
-      Emotes
-    </option>
-
-    <option value="Landscape">
-      Landscapes
-    </option>
+    <option value="all">All Categories</option>
+    <option value="Outfit">Outfits</option>
+    <option value="Glider">Gliders</option>
+    <option value="Tool">Tool Skins</option>
+    <option value="Emote">Emotes</option>
+    <option value="Landscape">Landscapes</option>
 
   </select>
 
-
   <select id="sort">
 
-    <option value="discount">
-      Biggest Discount
-    </option>
-
-    <option value="price">
-      Lowest Price
-    </option>
-
-    <option value="name">
-      Name
-    </option>
+    <option value="discount">Biggest Discount</option>
+    <option value="price">Lowest Price</option>
+    <option value="name">Name</option>
 
   </select>
 
 </div>
 
 
-<div class="section-heading">
+<div class="section-title">
 
   <h2>
     🔥 Current Sale
@@ -522,13 +364,13 @@ footer {
 ></section>
 
 
-<section class="wishlist-section">
+<section class="wishlist">
 
   <h2>
     ♡ Jessica's Wishlist
   </h2>
 
-  <p class="wishlist-description">
+  <p>
     Tap the heart on anything you like.
     Your wishlist is saved on this device.
   </p>
@@ -541,14 +383,10 @@ footer {
 </section>
 
 
-<section class="love-note">
-
-  <div class="symbol">
-    🫶🏼
-  </div>
+<section class="note">
 
   <h2>
-    Made for you
+    🫶🏼 Made for you
   </h2>
 
   <p>
@@ -577,8 +415,7 @@ footer {
 
   <br><br>
 
-  Prices and sale information should always be
-  checked against the current in-game Premium Shop
+  Always check the current in-game Premium Shop
   before purchasing.
 
 </footer>
@@ -599,7 +436,6 @@ const items = [
     image: "IMG_1147.webp"
   },
 
-
   {
     id: 2,
     name: "Umbrella Twirl",
@@ -609,7 +445,6 @@ const items = [
     old: 850,
     image: "IMG_1139.jpeg"
   },
-
 
   {
     id: 3,
@@ -621,7 +456,6 @@ const items = [
     image: "IMG_1140.jpeg"
   },
 
-
   {
     id: 4,
     name: "Highland Champion",
@@ -631,7 +465,6 @@ const items = [
     old: 2550,
     image: "IMG_1141.webp"
   },
-
 
   {
     id: 5,
@@ -643,7 +476,6 @@ const items = [
     image: "IMG_1142.png"
   },
 
-
   {
     id: 6,
     name: "Floral Fantasy Toolset",
@@ -654,7 +486,6 @@ const items = [
     image: "IMG_1143.png"
   },
 
-
   {
     id: 7,
     name: "Floral Fantasy Outfit",
@@ -664,7 +495,6 @@ const items = [
     old: 2550,
     image: "IMG_1144.jpeg"
   },
-
 
   {
     id: 8,
@@ -687,13 +517,20 @@ let wishlist =
   ) || [];
 
 
-function createCard(item) {
+function makeImage(item) {
 
-  const index =
-    items.findIndex(
-      x => x.id === item.id
-    );
+  return `
+    <img
+      src="${item.image}"
+      alt="${item.name}"
+      onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=&quot;image-error&quot;>Image could not be loaded.<br><br>${item.image}</div>';"
+    >
+  `;
 
+}
+
+
+function makeCard(item) {
 
   const saved =
     wishlist.includes(item.id);
@@ -703,21 +540,16 @@ function createCard(item) {
 
     <article class="card">
 
-      <div class="image">
+      <div class="item-image">
 
-        <img
-          src="${item.image}"
-          alt="${item.name}"
-          loading="lazy"
-        >
+        ${makeImage(item)}
 
       </div>
 
 
       <button
-        class="heart-button ${saved ? "saved" : ""}"
+        class="heart"
         onclick="toggleWishlist(${item.id})"
-        aria-label="Add ${item.name} to wishlist"
       >
 
         ${saved ? "♥" : "♡"}
@@ -737,7 +569,7 @@ function createCard(item) {
 
         <div class="price">
 
-          <span class="old">
+          <span class="old-price">
             ${item.old.toLocaleString()} PC
           </span>
 
@@ -760,7 +592,7 @@ function createCard(item) {
 
 function renderShop() {
 
-  const query =
+  const searchText =
     document
       .getElementById("search")
       .value
@@ -784,10 +616,10 @@ function renderShop() {
     items.filter(item => {
 
       const matchesSearch =
-        !query ||
+        !searchText ||
         item.name
           .toLowerCase()
-          .includes(query);
+          .includes(searchText);
 
 
       const matchesCategory =
@@ -840,22 +672,16 @@ function renderShop() {
   if (filtered.length === 0) {
 
     shop.innerHTML = `
-
       <div class="empty">
-
         No items found.
-        <br><br>
-        Try another search or category.
-
       </div>
-
     `;
 
   } else {
 
     shop.innerHTML =
       filtered
-        .map(createCard)
+        .map(makeCard)
         .join("");
 
   }
@@ -865,7 +691,7 @@ function renderShop() {
 
 function renderWishlist() {
 
-  const wishlistGrid =
+  const grid =
     document.getElementById("wishlist");
 
 
@@ -877,25 +703,19 @@ function renderWishlist() {
 
   if (savedItems.length === 0) {
 
-    wishlistGrid.innerHTML = `
-
+    grid.innerHTML = `
       <div class="empty">
-
         Your wishlist is empty.
-
         <br><br>
-
         Tap ♡ on something you love.
-
       </div>
-
     `;
 
   } else {
 
-    wishlistGrid.innerHTML =
+    grid.innerHTML =
       savedItems
-        .map(createCard)
+        .map(makeCard)
         .join("");
 
   }
@@ -903,8 +723,7 @@ function renderWishlist() {
 
   document
     .getElementById("wishlistCount")
-    .textContent =
-      savedItems.length;
+    ?.remove();
 
 }
 
@@ -937,30 +756,6 @@ function toggleWishlist(id) {
 }
 
 
-function updateStats() {
-
-  document
-    .getElementById("itemCount")
-    .textContent =
-      items.length;
-
-
-  const best =
-    Math.max(
-      ...items.map(
-        item => item.discount
-      )
-    );
-
-
-  document
-    .getElementById("bestDiscount")
-    .textContent =
-      best + "%";
-
-}
-
-
 document
   .getElementById("search")
   .addEventListener(
@@ -985,7 +780,6 @@ document
   );
 
 
-updateStats();
 renderShop();
 renderWishlist();
 
