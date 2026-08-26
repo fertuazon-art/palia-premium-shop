@@ -3,416 +3,179 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#789276">
-
-<title>Palia Premium Shop — Jessica's Edition</title>
+<title>Jessica's Palia Premium Shop ♡</title>
 
 <style>
-:root {
-  --cream: #f8f2e7;
-  --paper: #fffaf1;
-  --green: #718b70;
-  --green-dark: #506b50;
-  --green-light: #dfe9d8;
-  --pink: #d88991;
-  --text: #3f4037;
-  --muted: #777467;
-  --shadow: 0 10px 30px rgba(67,59,43,.12);
-  --radius: 20px;
+body{
+  margin:0;
+  background:#f8f2e7;
+  color:#3f4037;
+  font-family:Georgia,serif;
 }
 
-* {
-  box-sizing: border-box;
+header{
+  text-align:center;
+  padding:55px 20px;
+  background:linear-gradient(#dfe9d8,#f8f2e7);
 }
 
-html {
-  scroll-behavior: smooth;
+h1{
+  color:#506b50;
+  font-size:45px;
+  font-weight:normal;
+  margin:15px 0;
 }
 
-body {
-  margin: 0;
-  background:
-    radial-gradient(circle at 10% 5%, rgba(223,233,216,.8), transparent 30%),
-    radial-gradient(circle at 90% 15%, rgba(246,225,200,.7), transparent 28%),
-    var(--cream);
-  color: var(--text);
-  font-family: Georgia, "Times New Roman", serif;
+.subtitle{
+  color:#777467;
+  font-style:italic;
 }
 
-button,
-input,
-select {
-  font: inherit;
+.container{
+  max-width:1000px;
+  margin:auto;
+  padding:25px 15px 60px;
 }
 
-/* HEADER */
-
-header {
-  text-align: center;
-  padding: 55px 20px 45px;
-  background:
-    linear-gradient(
-      rgba(223,233,216,.88),
-      rgba(248,242,231,.92)
-    );
-  border-bottom: 1px solid rgba(80,107,80,.12);
+.intro{
+  background:#fffaf1;
+  padding:25px;
+  border-radius:22px;
+  margin-bottom:30px;
+  box-shadow:0 8px 25px rgba(0,0,0,.08);
 }
 
-.little-label {
-  display: inline-block;
-  padding: 8px 15px;
-  border-radius: 50px;
-  background: rgba(255,255,255,.7);
-  color: var(--green-dark);
-  font-family: Arial,sans-serif;
-  font-size: 11px;
-  font-weight: bold;
-  letter-spacing: 1.7px;
-  text-transform: uppercase;
+h2{
+  color:#506b50;
 }
 
-h1 {
-  margin: 17px 0 7px;
-  font-size: clamp(36px,8vw,64px);
-  font-weight: normal;
-  color: var(--green-dark);
+.controls{
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+  margin-bottom:25px;
 }
 
-.subtitle {
-  margin: 0 auto;
-  max-width: 650px;
-  color: var(--muted);
-  font-size: 17px;
-  line-height: 1.6;
-  font-style: italic;
+input,select{
+  padding:13px;
+  border:1px solid #d9cfbd;
+  border-radius:12px;
+  background:#fffaf1;
 }
 
-.heart {
-  color: var(--pink);
+input{
+  flex:1;
+  min-width:200px;
 }
 
-/* MAIN */
-
-.container {
-  width: min(1100px,calc(100% - 30px));
-  margin: 0 auto;
-  padding: 28px 0 60px;
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:20px;
 }
 
-.intro {
-  background: rgba(255,250,241,.92);
-  border: 1px solid #e7ddcb;
-  border-radius: 25px;
-  padding: 25px;
-  box-shadow: var(--shadow);
-  margin-bottom: 25px;
+.card{
+  position:relative;
+  overflow:hidden;
+  background:#fffaf1;
+  border-radius:20px;
+  box-shadow:0 8px 25px rgba(0,0,0,.1);
 }
 
-.intro h2 {
-  margin: 0 0 8px;
-  font-size: 25px;
-  color: var(--green-dark);
+.image{
+  height:250px;
+  background:#dfe9d8;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  overflow:hidden;
 }
 
-.intro p {
-  margin: 0;
-  color: var(--muted);
-  line-height: 1.65;
+.image img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
 }
 
-/* STATS */
-
-.stats {
-  display: grid;
-  grid-template-columns: repeat(3,1fr);
-  gap: 14px;
-  margin-bottom: 28px;
+.placeholder{
+  font-size:70px;
 }
 
-.stat {
-  background: var(--paper);
-  border: 1px solid #e7ddcb;
-  border-radius: 18px;
-  padding: 18px;
-  text-align: center;
-  box-shadow: var(--shadow);
+.info{
+  padding:18px;
 }
 
-.stat-number {
-  display: block;
-  font-family: Arial,sans-serif;
-  font-size: 25px;
-  font-weight: bold;
-  color: var(--green-dark);
+.category{
+  color:#718b70;
+  font:bold 11px Arial,sans-serif;
+  text-transform:uppercase;
+  letter-spacing:1px;
 }
 
-.stat-label {
-  display: block;
-  margin-top: 5px;
-  font-family: Arial,sans-serif;
-  font-size: 11px;
-  color: var(--muted);
-  text-transform: uppercase;
-  letter-spacing: 1px;
+.name{
+  font-size:22px;
+  margin:7px 0 12px;
 }
 
-/* CONTROLS */
-
-.controls {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  margin-bottom: 25px;
+.price{
+  font:bold 17px Arial,sans-serif;
 }
 
-.search {
-  flex: 1;
-  min-width: 220px;
+.old{
+  color:#aaa;
+  text-decoration:line-through;
+  font-size:13px;
+  margin-right:7px;
 }
 
-.search,
-.controls select {
-  border: 1px solid #d9cfbd;
-  background: rgba(255,250,241,.95);
-  color: var(--text);
-  padding: 13px 15px;
-  border-radius: 14px;
-  outline: none;
+.discount{
+  display:inline-block;
+  margin-top:10px;
+  padding:6px 10px;
+  background:#dfe9d8;
+  color:#506b50;
+  border-radius:20px;
+  font:bold 11px Arial,sans-serif;
 }
 
-.search:focus,
-.controls select:focus {
-  border-color: var(--green);
+.heart{
+  position:absolute;
+  top:12px;
+  right:12px;
+  width:42px;
+  height:42px;
+  border:0;
+  border-radius:50%;
+  background:white;
+  color:#d88991;
+  font-size:23px;
 }
 
-/* SECTION */
-
-.section-heading {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 15px;
-  margin: 30px 0 15px;
+.wishlist{
+  margin-top:40px;
+  padding:25px;
+  background:#eee7d8;
+  border-radius:22px;
 }
 
-.section-heading h2 {
-  margin: 0;
-  font-size: 27px;
-  color: var(--green-dark);
+.note{
+  margin-top:40px;
+  padding:30px;
+  text-align:center;
+  background:#fffaf1;
+  border-radius:22px;
 }
 
-.section-heading span {
-  color: var(--muted);
-  font-family: Arial,sans-serif;
-  font-size: 12px;
+footer{
+  text-align:center;
+  padding:30px;
+  color:#777467;
+  font:12px Arial,sans-serif;
 }
 
-/* GRID */
-
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit,minmax(245px,1fr));
-  gap: 18px;
-}
-
-.card {
-  position: relative;
-  overflow: hidden;
-  background: var(--paper);
-  border: 1px solid #e6dccb;
-  border-radius: var(--radius);
-  box-shadow: var(--shadow);
-  transition: transform .2s ease,box-shadow .2s ease;
-}
-
-.card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 15px 38px rgba(67,59,43,.16);
-}
-
-.item-image {
-  height: 230px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-  background:
-    radial-gradient(circle at 25% 25%,#fff6df,transparent 28%),
-    linear-gradient(135deg,#dce8d7,#f3e5cf);
-}
-
-.item-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
-
-.placeholder {
-  font-size: 65px;
-}
-
-.item-body {
-  padding: 18px;
-}
-
-.category {
-  color: var(--green);
-  font-family: Arial,sans-serif;
-  font-size: 10px;
-  font-weight: bold;
-  letter-spacing: 1.3px;
-  text-transform: uppercase;
-}
-
-.item-name {
-  margin: 6px 0 12px;
-  font-size: 21px;
-  line-height: 1.2;
-}
-
-.price {
-  font-family: Arial,sans-serif;
-  font-size: 17px;
-  font-weight: bold;
-}
-
-.old-price {
-  margin-right: 7px;
-  color: #aaa;
-  font-size: 13px;
-  font-weight: normal;
-  text-decoration: line-through;
-}
-
-.discount {
-  display: inline-block;
-  margin-top: 11px;
-  padding: 6px 10px;
-  border-radius: 50px;
-  background: var(--green-light);
-  color: var(--green-dark);
-  font-family: Arial,sans-serif;
-  font-size: 11px;
-  font-weight: bold;
-}
-
-.wishlist-button {
-  position: absolute;
-  top: 12px;
-  right: 12px;
-  width: 40px;
-  height: 40px;
-  border: none;
-  border-radius: 50%;
-  background: rgba(255,250,241,.9);
-  color: var(--pink);
-  font-size: 22px;
-  cursor: pointer;
-  box-shadow: 0 4px 12px rgba(0,0,0,.08);
-}
-
-.wishlist-button.saved {
-  background: #fff0f0;
-}
-
-.empty {
-  grid-column: 1/-1;
-  padding: 45px 20px;
-  text-align: center;
-  color: var(--muted);
-  background: rgba(255,250,241,.7);
-  border-radius: 18px;
-}
-
-/* WISHLIST */
-
-.wishlist-section {
-  margin-top: 42px;
-  padding: 24px;
-  background: #eee7d8;
-  border-radius: 24px;
-}
-
-.wishlist-section h2 {
-  margin-top: 0;
-  color: var(--green-dark);
-}
-
-.wishlist-description {
-  color: var(--muted);
-  font-family: Arial,sans-serif;
-  font-size: 13px;
-  line-height: 1.5;
-  margin-bottom: 18px;
-}
-
-/* LOVE NOTE */
-
-.love-note {
-  margin-top: 40px;
-  padding: 30px 25px;
-  text-align: center;
-  background:
-    linear-gradient(135deg,#fff8ee,#f4e9d9);
-  border: 1px solid #eadbc5;
-  border-radius: 25px;
-  box-shadow: var(--shadow);
-}
-
-.love-note .symbol {
-  font-size: 30px;
-}
-
-.love-note h2 {
-  margin: 10px 0;
-  color: var(--green-dark);
-  font-size: 26px;
-  font-weight: normal;
-}
-
-.love-note p {
-  max-width: 650px;
-  margin: auto;
-  color: var(--muted);
-  line-height: 1.7;
-}
-
-/* FOOTER */
-
-footer {
-  padding: 25px 20px 40px;
-  text-align: center;
-  color: #898272;
-  font-family: Arial,sans-serif;
-  font-size: 11px;
-  line-height: 1.6;
-}
-
-/* MOBILE */
-
-@media(max-width:650px) {
-  header {
-    padding: 42px 18px 35px;
-  }
-
-  .stats {
-    grid-template-columns: 1fr;
-  }
-
-  .container {
-    width: min(100% - 20px,1100px);
-  }
-
-  .intro,
-  .wishlist-section,
-  .love-note {
-    padding: 20px;
-  }
-
-  .section-heading {
-    align-items: flex-start;
-    flex-direction: column;
+@media(max-width:600px){
+  h1{
+    font-size:36px;
   }
 }
 </style>
@@ -422,12 +185,10 @@ footer {
 
 <header>
 
-  <span class="little-label">
-    Palia Premium Shop
-  </span>
+  <div>PALIA PREMIUM SHOP</div>
 
   <h1>
-    Jessica's Edition <span class="heart">♡</span>
+    Jessica's Edition ♡
   </h1>
 
   <p class="subtitle">
@@ -441,36 +202,13 @@ footer {
 
 <section class="intro">
 
-  <h2>
-    🌿 August 2026 Shop Tracker
-  </h2>
+  <h2>🌿 August 2026 Shop</h2>
 
   <p>
     Welcome to your little corner of Palia.
-    Keep track of discounted outfits, gliders,
-    tool skins, emotes and other Premium Shop goodies
-    all in one place.
+    Here are the Premium Shop items and discounts
+    we're keeping track of.
   </p>
-
-</section>
-
-
-<section class="stats">
-
-  <div class="stat">
-    <span class="stat-number" id="itemCount">0</span>
-    <span class="stat-label">Sale Items</span>
-  </div>
-
-  <div class="stat">
-    <span class="stat-number" id="bestDiscount">0%</span>
-    <span class="stat-label">Best Discount</span>
-  </div>
-
-  <div class="stat">
-    <span class="stat-number" id="wishlistCount">0</span>
-    <span class="stat-label">Wishlist</span>
-  </div>
 
 </section>
 
@@ -479,110 +217,51 @@ footer {
 
   <input
     id="search"
-    class="search"
-    type="search"
-    placeholder="Search outfits, gliders, tools..."
+    placeholder="Search items..."
   >
 
   <select id="category">
 
-    <option value="all">
-      All Categories
-    </option>
-
-    <option value="Outfit">
-      Outfits
-    </option>
-
-    <option value="Glider">
-      Gliders
-    </option>
-
-    <option value="Tool Skin">
-      Tool Skins
-    </option>
-
-    <option value="Landscape">
-      Landscapes
-    </option>
-
-    <option value="Emote">
-      Emotes
-    </option>
-
-    <option value="Pet">
-      Pets
-    </option>
-
-  </select>
-
-
-  <select id="sort">
-
-    <option value="discount">
-      Biggest Discount
-    </option>
-
-    <option value="name">
-      Name
-    </option>
-
-    <option value="price">
-      Lowest Price
-    </option>
+    <option value="all">All Categories</option>
+    <option value="Outfit">Outfits</option>
+    <option value="Glider">Gliders</option>
+    <option value="Tool">Tool Skins</option>
+    <option value="Emote">Emotes</option>
+    <option value="Landscape">Landscapes</option>
 
   </select>
 
 </div>
 
 
-<div class="section-heading">
+<h2>🔥 Current Sale</h2>
 
-  <h2>
-    🔥 Current Sale
-  </h2>
-
-  <span>
-    August 2026
-  </span>
-
-</div>
+<section id="shop" class="grid"></section>
 
 
-<section id="shopGrid" class="grid"></section>
+<section class="wishlist">
 
+  <h2>♡ Jessica's Wishlist</h2>
 
-<section class="wishlist-section">
-
-  <h2>
-    ♡ Jessica's Wishlist
-  </h2>
-
-  <p class="wishlist-description">
+  <p>
     Tap the heart on anything you like.
-    Your wishlist is saved on this device.
   </p>
 
-  <section id="wishlistGrid" class="grid"></section>
+  <section id="saved" class="grid"></section>
 
 </section>
 
 
-<section class="love-note">
+<section class="note">
 
-  <div class="symbol">
-    🫶🏼
-  </div>
-
-  <h2>
-    Made for you
-  </h2>
+  <h2>🫶🏼 Made for you</h2>
 
   <p>
-    I made this little shop tracker so you don't have
+    I made this little shop for you so you don't have
     to keep searching everywhere whenever something
-    you like goes on sale. I hope you find something
-    pretty for your Palia adventures.
+    you like goes on sale.
+    I hope you find something pretty for your
+    Palia adventures.
   </p>
 
 </section>
@@ -594,213 +273,153 @@ footer {
 
   Fan-made Palia companion website.
 
-  <br>
-
-  Palia is developed and published by Singularity 6.
-  This website is not affiliated with or endorsed by Singularity 6.
-
   <br><br>
 
-  Prices and sale information should always be checked
-  against the current in-game Premium Shop before purchasing.
+  Palia is developed and published by Singularity 6.
+  This website is not affiliated with or endorsed by
+  Singularity 6.
 
 </footer>
 
 
 <script>
 
-/*
-============================================================
-SHOP DATA
-============================================================
-
-To add a picture later:
-
-image: "filename.png"
-
-The filename must exactly match the image uploaded
-to the same GitHub repository.
-
-*/
-
 const items = [
 
   {
-    id: 1,
-    name: "Highland Champion",
-    category: "Outfit",
-    discount: 20,
-    price: 2040,
-    old: 2550,
-    icon: "🏔️"
+    name:"Highland Champion",
+    category:"Outfit",
+    discount:20,
+    price:2040,
+    old:2550,
+    icon:"🏔️"
   },
 
   {
-    id: 2,
-    name: "Lilypad Umbrella",
-    category: "Glider",
-    discount: 20,
-    price: 680,
-    old: 850,
-    icon: "🌿"
+    name:"Lilypad Umbrella",
+    category:"Glider",
+    discount:20,
+    price:680,
+    old:850,
+    icon:"🌿"
   },
 
   {
-    id: 3,
-    name: "Floral Fantasy Toolset",
-    category: "Tool Skin",
-    discount: 15,
-    price: 1084,
-    old: 1275,
-    icon: "🌸"
+    name:"Floral Fantasy Toolset",
+    category:"Tool",
+    discount:15,
+    price:1084,
+    old:1275,
+    icon:"🌸"
   },
 
   {
-    id: 4,
-    name: "Floral Fantasy Outfit",
-    category: "Outfit",
-    discount: 15,
-    price: 2168,
-    old: 2550,
-    icon: "🌷"
+    name:"Floral Fantasy Outfit",
+    category:"Outfit",
+    discount:15,
+    price:2168,
+    old:2550,
+    icon:"🌷"
   },
 
   {
-    id: 5,
-    name: "Snowy Socialite",
-    category: "Outfit",
-    discount: 30,
-    price: 1785,
-    old: 2550,
-    icon: "❄️"
+    name:"Snowy Socialite",
+    category:"Outfit",
+    discount:30,
+    price:1785,
+    old:2550,
+    icon:"❄️"
   },
 
   {
-    id: 6,
-    name: "Plush Park Landscape",
-    category: "Landscape",
-    discount: 40,
-    price: 1020,
-    old: 1700,
-    icon: "🌳"
+    name:"Plush Park Landscape",
+    category:"Landscape",
+    discount:40,
+    price:1020,
+    old:1700,
+    icon:"🌳"
   },
 
   {
-    id: 7,
-    name: "Umbrella Twirl",
-    category: "Emote",
-    discount: 40,
-    price: 510,
-    old: 850,
-    icon: "☂️"
+    name:"Umbrella Twirl",
+    category:"Emote",
+    discount:40,
+    price:510,
+    old:850,
+    icon:"☂️"
   },
 
   {
-    id: 8,
-    name: "Wedding Party Glider",
-    category: "Glider",
-    discount: 50,
-    price: 425,
-    old: 850,
-    image: "IMG_1135.png"
+    name:"Wedding Party Glider",
+    category:"Glider",
+    discount:50,
+    price:425,
+    old:850,
+    image:"IMG_1135.png"
   }
 
 ];
 
 
-let wishlist =
-  JSON.parse(
-    localStorage.getItem("jessicaPaliaWishlist")
-  ) || [];
+let wishlist=[];
 
 
-const shopGrid =
-  document.getElementById("shopGrid");
+function card(item,index){
 
-const wishlistGrid =
-  document.getElementById("wishlistGrid");
+  let picture;
 
-const search =
-  document.getElementById("search");
+  if(item.image){
 
-const category =
-  document.getElementById("category");
+    picture=
+      `<img src="${item.image}" alt="${item.name}">`;
 
-const sort =
-  document.getElementById("sort");
+  }else{
 
+    picture=
+      `<div class="placeholder">${item.icon}</div>`;
 
-function createCard(item) {
-
-  const saved =
-    wishlist.includes(item.id);
-
-  const imageContent = item.image
-
-    ? `<img src="${item.image}" alt="${item.name}">`
-
-    : `<div class="placeholder">${item.icon}</div>`;
+  }
 
 
   return `
 
     <article class="card">
 
-      <div class="item-image">
+      <div class="image">
 
-        ${imageContent}
+        ${picture}
 
       </div>
 
-
       <button
-
-        class="wishlist-button ${saved ? "saved" : ""}"
-
-        onclick="toggleWishlist(${item.id})"
-
-        aria-label="Add ${item.name} to wishlist"
-
+        class="heart"
+        onclick="save(${index})"
       >
-
-        ${saved ? "♥" : "♡"}
-
+        ♡
       </button>
 
-
-      <div class="item-body">
+      <div class="info">
 
         <div class="category">
-
           ${item.category}
-
         </div>
 
-
-        <div class="item-name">
-
+        <div class="name">
           ${item.name}
-
         </div>
-
 
         <div class="price">
 
-          <span class="old-price">
-
-            ${item.old.toLocaleString()} PC
-
+          <span class="old">
+            ${item.old} PC
           </span>
 
-          ${item.price.toLocaleString()} PC
+          ${item.price} PC
 
         </div>
 
-
         <span class="discount">
-
           ${item.discount}% OFF
-
         </span>
 
       </div>
@@ -812,194 +431,92 @@ function createCard(item) {
 }
 
 
-function renderShop() {
+function render(){
 
-  const query =
-    search.value.trim().toLowerCase();
+  const search=
+    document.getElementById("search")
+    .value
+    .toLowerCase();
 
-  const selectedCategory =
-    category.value;
-
-  const selectedSort =
-    sort.value;
+  const category=
+    document.getElementById("category")
+    .value;
 
 
-  let filtered =
-    items.filter(item => {
+  const filtered=
+    items.filter(item=>{
 
-      const matchesSearch =
-        !query ||
-        item.name.toLowerCase().includes(query);
+      const searchMatch=
+        item.name.toLowerCase()
+        .includes(search);
 
-      const matchesCategory =
-        selectedCategory === "all" ||
-        item.category === selectedCategory;
+      const categoryMatch=
+        category==="all" ||
+        item.category===category;
 
-      return matchesSearch &&
-             matchesCategory;
+      return searchMatch &&
+             categoryMatch;
 
     });
 
 
-  if (selectedSort === "discount") {
-
-    filtered.sort(
-      (a,b) => b.discount - a.discount
-    );
-
-  }
+  document.getElementById("shop")
+    .innerHTML=
+    filtered
+      .map(item=>card(item,items.indexOf(item)))
+      .join("");
 
 
-  if (selectedSort === "name") {
-
-    filtered.sort(
-      (a,b) =>
-        a.name.localeCompare(b.name)
-    );
-
-  }
+  document.getElementById("saved")
+    .innerHTML=
+    wishlist
+      .map(index=>card(items[index],index))
+      .join("");
 
 
-  if (selectedSort === "price") {
+  if(wishlist.length===0){
 
-    filtered.sort(
-      (a,b) => a.price - b.price
-    );
-
-  }
-
-
-  if (filtered.length === 0) {
-
-    shopGrid.innerHTML = `
-
-      <div class="empty">
-
-        No items found.
-        Try another search.
-
-      </div>
-
-    `;
-
-  } else {
-
-    shopGrid.innerHTML =
-      filtered.map(createCard).join("");
-
-  }
-
-}
-
-
-function renderWishlist() {
-
-  const savedItems =
-    items.filter(item =>
-      wishlist.includes(item.id)
-    );
-
-
-  if (savedItems.length === 0) {
-
-    wishlistGrid.innerHTML = `
-
-      <div class="empty">
-
+    document.getElementById("saved")
+      .innerHTML=
+      `<div>
         Your wishlist is empty.
-
-        <br><br>
-
         Tap ♡ on something you love.
-
-      </div>
-
-    `;
-
-  } else {
-
-    wishlistGrid.innerHTML =
-      savedItems.map(createCard).join("");
+      </div>`;
 
   }
 
-
-  document.getElementById("wishlistCount")
-    .textContent =
-    savedItems.length;
-
 }
 
 
-function toggleWishlist(id) {
+function save(index){
 
-  if (wishlist.includes(id)) {
+  if(wishlist.includes(index)){
 
-    wishlist =
-      wishlist.filter(
-        itemId => itemId !== id
-      );
+    wishlist=
+      wishlist.filter(x=>x!==index);
 
-  } else {
+  }else{
 
-    wishlist.push(id);
+    wishlist.push(index);
 
   }
 
-
-  localStorage.setItem(
-    "jessicaPaliaWishlist",
-    JSON.stringify(wishlist)
-  );
-
-
-  renderShop();
-  renderWishlist();
+  render();
 
 }
 
 
-function updateStats() {
-
-  document.getElementById("itemCount")
-    .textContent =
-    items.length;
+document
+  .getElementById("search")
+  .addEventListener("input",render);
 
 
-  const highestDiscount =
-    Math.max(
-      ...items.map(item => item.discount)
-    );
+document
+  .getElementById("category")
+  .addEventListener("change",render);
 
 
-  document.getElementById("bestDiscount")
-    .textContent =
-    highestDiscount + "%";
-
-}
-
-
-search.addEventListener(
-  "input",
-  renderShop
-);
-
-
-category.addEventListener(
-  "change",
-  renderShop
-);
-
-
-sort.addEventListener(
-  "change",
-  renderShop
-);
-
-
-updateStats();
-renderShop();
-renderWishlist();
+render();
 
 </script>
 
